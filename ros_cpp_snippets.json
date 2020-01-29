@@ -83,8 +83,8 @@
 		"prefix": "add_executalbe",
 		"body": [
 			"add_executable(${1:/*node_file_name*/} src/${1:/*node_file_name*/}.cpp)",
-			"add_dependencies(${1:/*node_file_name*/} \${\${PROJECT_NAME}_EXPORTED_TARGETS} \${catkin_EXPORTED_TARGETS})",
-			"target_link_libraries(${1:/*node_file_name*/} \${catkin_LIBRARIES})",
+			"add_dependencies(${1:/*node_file_name*/} \\${\\${PROJECT_NAME}_EXPORTED_TARGETS} \\${catkin_EXPORTED_TARGETS})",
+			"target_link_libraries(${1:/*node_file_name*/} \\${catkin_LIBRARIES})",
 			"$0"
 		]
 	}
