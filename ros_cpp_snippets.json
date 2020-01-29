@@ -73,5 +73,13 @@
 		"scope": "cpp",
 		"prefix": "rosparam_get",
 		"body": "if (!n.getParam(\"$1\", ${1:name}))\n\t{ ROS_ERROR(\"No $1 param\"); }\n$0",
-	}
+	},
+	"add executable": {
+	"scope": "cmake",
+	"prefix": "add_executalbe",
+	"body": [
+		"add_executable(${1:/*node_file_name*/} src/${1:/*node_file_name*/}.cpp)",
+		"add_dependencies(${1:/*node_file_name*/} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})",
+		"target_link_libraries(${1:/*node_file_name*/} ${catkin_LIBRARIES})"
+	]
 }
